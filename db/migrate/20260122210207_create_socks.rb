@@ -1,3 +1,5 @@
+
+# Does this class create a new table and adds it to the database?
 class CreateSocks < ActiveRecord::Migration[8.1]
   def change
     create_table :socks do |t|

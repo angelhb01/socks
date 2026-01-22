@@ -1,3 +1,4 @@
+# does this file contain the routes that the user can navigate to?
 Rails.application.routes.draw do
   resources :socks
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,3 +1,9 @@
+=begin
+
+The controller handles requests from the client and gives a response.
+It handles HTTP requests like GET and POST methods.
+
+=end
 class SocksController < ApplicationController
   before_action :set_sock, only: %i[ show edit update destroy ]
 
