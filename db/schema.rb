@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[8.1].define(version: 2026_01_23_184857) do
   create_table "matches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,6 +21,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_23_184857) do
     t.index ["sock_2_id"], name: "index_matches_on_sock_2_id"
   end
 
+=======
+ActiveRecord::Schema[8.1].define(version: 2026_01_22_210207) do
+>>>>>>> sock-scaffold
   create_table "socks", force: :cascade do |t|
     t.integer "age"
     t.string "color"
@@ -30,7 +34,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_23_184857) do
     t.string "name"
     t.datetime "updated_at", null: false
   end
+<<<<<<< HEAD
 
   add_foreign_key "matches", "socks", column: "sock_1_id"
   add_foreign_key "matches", "socks", column: "sock_2_id"
+=======
+>>>>>>> sock-scaffold
 end
