@@ -1,4 +1,4 @@
-= form_with(model: sock) do |form|
+= form_with(model: @sock) do |form|
   - if sock.errors.any?
     %div{style: "color: red"}
       %h2= "#{pluralize(sock.errors.count, "error")} prohibited this sock from being saved:"

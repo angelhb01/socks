@@ -19,4 +19,12 @@ body {
   line-height: 1.5;
   color: #222;
   background-color: #fafafa;
+  padding: 2rem;
+}
+
+.sock {
+  background-color: rgb(233, 233, 233);
+  border: solid black;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
 }
