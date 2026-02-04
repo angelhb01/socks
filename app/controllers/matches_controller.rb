@@ -9,20 +9,14 @@ class MatchesController < ApplicationController
   
     # POST /socks/{sock_id}/matches
     def create
-      puts params
-
-      @match = Match.new(
-        sock_1_id: params[:sock_id],
-        sock_2_id: params[:match][:match_id]
-      )
-
+      @match = Match.new(sock_1_id: params[:sock_id], sock_2_id: params[:match][:match_id])
       @match.save
-      redirect_to @sock, notice: "Match was successfully created." 
+      redirect_to @sock, notice: "Match was successfully created."
     end
+    
 
-  private
-
-    def load_sock
-      @sock = Sock.find(params[:sock_id])
-    end
+    private 
+      def load_sock
+        @sock = Sock.find(params[:sock_id])
+      end
 end

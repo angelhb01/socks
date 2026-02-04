@@ -15,7 +15,6 @@ class SocksController < ApplicationController
 
   # GET /socks/1 or /socks/1.json
   def show
-    @matches = Match.all
   end
 
   # GET /socks/new

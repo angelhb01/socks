@@ -28,3 +28,7 @@ body {
   border-radius: 0.5rem;
   padding-left: 1rem;
 }
+
+.sock.matched {
+  background-color: green;
+}
