@@ -11,6 +11,8 @@ class Sock < ApplicationRecord
              foreign_key: :sock_2_id,
              dependent: :destroy
     
+    belongs_to :owner, class_name: "User", foreign_key: :user_id
+    
     def match
         Match.find_by("sock_1_id = :id OR sock_2_id = :id", id: id)
     end

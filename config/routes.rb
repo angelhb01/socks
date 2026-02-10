@@ -1,5 +1,6 @@
 # does this file contain the routes that the user can navigate to?
 Rails.application.routes.draw do
+  devise_for :users
   resources :socks do
     resources :matches
   end
