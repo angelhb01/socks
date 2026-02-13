@@ -4,4 +4,21 @@ module SocksHelper
             "matched"
         end
     end
+
+    def propose_match sock
+        if sock.matched?
+            match = [sock.match.sock_1_id, sock.match.sock_2_id]
+            for sock_id in match do
+                if sock_id == sock.id and match.index(sock_id) == 0
+                    return match[1]
+                else
+                    return match[0]
+                end
+
+            end
+        else
+            return "No match"
+        end
+
+    end
 end
