@@ -11,6 +11,7 @@ class SocksController < ApplicationController
   def index
     @socks = Sock.all
     @matches = Match.all
+    @proposal = Proposal.all
   end
 
   # GET /socks/1 or /socks/1.json
@@ -59,7 +60,6 @@ class SocksController < ApplicationController
     @sock.destroy!
 
     respond_to do |format|
-      format.html { redirect_to socks_path, notice: "Sock was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end

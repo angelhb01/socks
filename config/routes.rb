@@ -1,8 +1,11 @@
 # does this file contain the routes that the user can navigate to?
 Rails.application.routes.draw do
-  devise_for :users
-  resources :socks do
+    devise_for :users
+    get "app", to: "dashboard#welcome"
+
+    resources :socks, except: :index do
     resources :matches
+    resources :proposals
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
