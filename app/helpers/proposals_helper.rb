@@ -1,4 +1,4 @@
-module ProposalHelper
+module ProposalsHelper
     def socks_options
         # [["", 1], ["", 2], ["", 3]]
         @socks.map do |sock|

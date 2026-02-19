@@ -6,6 +6,7 @@ module SocksHelper
     end
 
     def propose_match sock
+        sock_elements = []
         if sock.matched?
             match = [sock.match.sock_1_id, sock.match.sock_2_id]
             for sock_id in match do
@@ -14,11 +15,9 @@ module SocksHelper
                 else
                     return match[0]
                 end
-
             end
         else
-            return "No match"
+            return "No Incoming Proposal"
         end
-
     end
 end
