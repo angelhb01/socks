@@ -12,14 +12,14 @@ class Sock < ApplicationRecord
             dependent: :destroy
     
     has_many :proposals_as_sock_1,
-        class_name: "Proposal",
-        foreign_key: :sock_1_id,
-        dependent: :destroy
+             class_name: "Proposal",
+             foreign_key: :sock_1_id,
+             dependent: :destroy
 
     has_many :proposals_as_sock_2,
-            class_name: "Proposal",
-            foreign_key: :sock_2_id,
-            dependent: :destroy
+             class_name: "Proposal",
+             foreign_key: :sock_2_id,
+             dependent: :destroy
 
     
     belongs_to :owner, class_name: "User", foreign_key: :user_id
@@ -31,4 +31,13 @@ class Sock < ApplicationRecord
     def matched?
         match.present?
     end
+
+    def proposals
+        Proposal.find_by("sock_1_id = :id OR sock_2_id = :id", id: id)
+    end
+
+    def has_proposals?
+        proposals.present?
+    end
+
 end

@@ -6,14 +6,13 @@ module SocksHelper
     end
 
     def propose_match sock
-        sock_elements = []
-        if sock.matched?
-            match = [sock.match.sock_1_id, sock.match.sock_2_id]
-            for sock_id in match do
-                if sock_id == sock.id and match.index(sock_id) == 0
-                    return match[1]
+        if sock.has_proposals?
+            proposal = [sock.proposals.sock_1_id, sock.proposals.sock_2_id]
+            for sock_id in proposal do
+                if sock_id == sock.id and proposals.index(sock_id) == 0
+                    return proposal[1]
                 else
-                    return match[0]
+                    return proposal[0]
                 end
             end
         else
