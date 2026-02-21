@@ -54,41 +54,21 @@ user.save!
     age: 10,
     color: "black",
     description: "Minimalist sock with a deep appreciation for symmetry and order.",
-    gender: "non-binary",
+    gender: "male",
     height: "dress",
     name: "Mono"
   },
   {
-    id: 6,
-    age: 1,
-    color: "pink",
-    description: "Still figuring things out but very optimistic about drawers.",
-    gender: "female",
-    height: "ankle",
-    name: "Peaches"
-  },
-  {
-    id: 7,
-    age: 8,
-    color: "striped",
-    description: "World traveler who claims to have seen every washing machine brand.",
-    gender: "male",
-    height: "crew",
-    name: "Marco"
-  },
-  {
-    id: 8,
     age: 6,
     color: "purple",
     description: "Creative sock who dreams of becoming a scarf one day.",
-    gender: "non-binary",
+    gender: "female",
     height: "knee-high",
     name: "Velour"
   }
 ].each do |sock_params|
   id = sock_params.delete(:id)
   sock = Sock.new
-
   if id
     sock = Sock.find_or_initialize_by(id: id)
   end
@@ -97,6 +77,11 @@ user.save!
   sock.save!
 end
 
-[[1, 4], [3, 7]].each do |match_id_1, match_id_2|
+
+[ [ 1, 4 ], [ 3, 7 ] ].each do |match_id_1, match_id_2|
   Match.find_or_create_by!(sock_1_id: match_id_1, sock_2_id: match_id_2)
+end
+
+[ [ 2, 5 ] ].each do |sock_id, proposed_sock_id|
+  Proposal.find_or_create_by!(sock_id: sock_id, proposed_sock_id: proposed_sock_id)
 end
