@@ -5,5 +5,5 @@ module ApplicationHelper
         else
             "Socks - Find Your Pair"
         end
-  end
+    end
 end

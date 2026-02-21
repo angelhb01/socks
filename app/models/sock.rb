@@ -31,13 +31,4 @@ class Sock < ApplicationRecord
     def matched?
         match.present?
     end
-
-    def proposals
-        Proposal.find_by("sock_1_id = :id OR sock_2_id = :id", id: id)
-    end
-
-    def has_proposals?
-        proposals.present?
-    end
-
 end

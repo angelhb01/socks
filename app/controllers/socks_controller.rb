@@ -60,6 +60,7 @@ class SocksController < ApplicationController
     @sock.destroy!
 
     respond_to do |format|
+      format.html { redirect_to root_path, notice: "Sock was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
